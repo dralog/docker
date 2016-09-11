@@ -1,3 +1,3 @@
 #!/bin/sh
 
-docker build -t svero/maven:latest .
+docker build -t svero/maven .

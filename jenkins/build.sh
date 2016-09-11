@@ -1,3 +1,3 @@
 #!/bin/sh
 
-docker build -t svero/jenkins:latest .
+docker build -t svero/jenkins .

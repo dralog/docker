@@ -5,7 +5,7 @@ FROM svero/maven:latest
 
 MAINTAINER Sven Roeseler <me@svero.de>
 
-RUN yum upgrade -y && yum install -y git curl zip
+RUN yum upgrade -y && yum install -y git subversion curl zip
 
 ENV JENKINS_HOME /var/jenkins_home
 ENV JENKINS_SLAVE_AGENT_PORT 50000
@@ -41,10 +41,10 @@ COPY dependencies/init.groovy /usr/share/jenkins/ref/init.groovy.d/tcp-slave-age
 
 # jenkins version being bundled in this docker image
 ARG JENKINS_VERSION
-ENV JENKINS_VERSION ${JENKINS_VERSION:-2.7.2}
+ENV JENKINS_VERSION ${JENKINS_VERSION:-2.7.4}
 
 # jenkins.war checksum, download will be validated using it
-ARG JENKINS_SHA=4c05175677825a0c311ef3001bbb0a767dad0e8d
+ARG JENKINS_SHA=07a2e3e4ace728fdbcc823f46068d2f8cc3cb97b
 
 # Can be used to customize where jenkins.war get downloaded from
 ARG JENKINS_URL=http://repo.jenkins-ci.org/public/org/jenkins-ci/main/jenkins-war/${JENKINS_VERSION}/jenkins-war-${JENKINS_VERSION}.war

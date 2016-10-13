@@ -3,7 +3,7 @@
 ##############################################################################################
 FROM svero/maven:latest
 
-MAINTAINER Sven Roeseler <me@svero.de>
+MAINTAINER Sven Roeseler <sven@svero.de>
 
 RUN yum upgrade -y && yum install -y git subversion curl zip
 

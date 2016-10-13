@@ -1,6 +1,6 @@
 FROM centos:latest
 
-MAINTAINER Sven Roeseler <me@svero.de>
+MAINTAINER Sven Roeseler <sven@svero.de>
 
 # Upgrade base image and install wget
 RUN yum upgrade -y && yum install -y wget

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 docker run --detach \
-	--hostname ${GITLAB_HOSTNAME:=localhost} \
+	--hostname ${GITLAB_HOSTNAME:=`hostname -f`} \
 	--publish ${GITLAB_HTTP_PORT:=80}:80 \
 	--publish ${GITLAB_HTTPS_PORT:=443}:443 \
 	--publish ${GITLAB_SSH_PORT:=22}:22 \

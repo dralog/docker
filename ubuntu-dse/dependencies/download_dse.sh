@@ -5,4 +5,4 @@ if [ "$1" == "" -o "$2" == "" ]; then
 	exit 1
 fi
 
-echo curl --user $1:$2 -L http://downloads.datastax.com/enterprise/dse.tar.gz
+curl --user $1:$2 -L http://downloads.datastax.com/enterprise/dse.tar.gz

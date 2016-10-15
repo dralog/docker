@@ -1,6 +1,6 @@
-FROM svero/oracle-jdk-8:latest
+FROM dralog/oracle-jdk-8:latest
 
-MAINTAINER Sven Roeseler <sven@svero.me>
+MAINTAINER Sven Roeseler <sven@dralog.net>
 
 COPY dependencies/datastax.repo /etc/yum.repos.d/
 

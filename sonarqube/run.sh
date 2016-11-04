@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Database
+# Database (volume: /var/lib/postgresql/data)
 docker run \
 	--detach \
 	--name ${SONARQUBE_DB_NAME:=sonarqube_db} \
@@ -8,7 +8,7 @@ docker run \
 	--env "POSTGRES_PASSWORD=sonar" \
 	postgres:latest
 
-# SonarQube
+# SonarQube (volumes: /opt/sonarqube/data, /opt/sonarqube/extensions)
 docker run \
 	--detach \
 	--name ${SONARQUBE_NAME:=sonarqube} \

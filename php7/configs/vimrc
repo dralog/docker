@@ -1,0 +1,11 @@
+if has('syntax')
+	syntax on
+endif
+
+set autoindent
+set background=dark
+set backspace=eol,indent,start
+set nocompatible
+set noexpandtab
+set tabstop=2
+set nowrap

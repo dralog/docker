@@ -1,0 +1,6 @@
+parameters:
+    mailer_transport: smtp
+    mailer_host: 
+    mailer_user: 
+    mailer_password: 
+    secret: d742efbf2cfd31b77a0ed315ff0f8d8460776c2d

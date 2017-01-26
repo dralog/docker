@@ -1,15 +1,16 @@
 #!/bin/sh
 
 docker run \
-	--name redmine_db \
+	--name ${REDMINE_DB_CONTAINER_NAME=redmine_db} \
 	--detach \
-	--env POSTGRES_PASSWORD=secret \
-	--env POSTGRES_USER=redmine \
+	--env POSTGRES_PASSWORD=${REDMINE_DB_PASSWORD=secret} \
+	--env POSTGRES_USER=${REDMINE_DB_USER=redmine} \
 	postgres
 
 docker run \
-	--name redmine_app \
 	--detach \
-	--link redmine_db:postgres \
-	--publish 8080:3000 \
+	--name ${REDMINE_CONTAINER_NAME=redmine_app} \
+	--hostname ${REDMINE_HOSTNAME:=`hostname -f`} \
+	--link ${REDMINE_DB_CONTAINER_NAME}:postgres \
+	--publish ${REDMINE_HTTP_PORT=8080}:3000 \
 	redmine
